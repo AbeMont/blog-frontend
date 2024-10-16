@@ -139,20 +139,21 @@ function ArticleForm({ editArticleId }){
         { showWidget &&  <Editor
           onSetContent={()=>`${article.markdown}`}
           initialValue={`${article.markdown}`}
-          apiKey="osvlx9krhqwagmuy22fxeeoadh5ysqey3cow2ua3ysgkcs3q"
+          apiKey="79h2v0550s32x5d172tfrp605aiu77g57p82p649jtjg2x6p"
           init={{
             height: 350,
             menubar: false,
             plugins: [
-              'advlist autolink lists link image', 
-              'charmap print preview anchor help',
-              'searchreplace visualblocks code',
-              'insertdatetime media table paste wordcount'
+               // Core editing features
+              'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
+              // Your account includes a free trial of TinyMCE premium features
+              // Try the most popular premium features until Oct 30, 2024:
+              'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown'
             ],
+            tinycomments_mode: 'embedded',
             toolbar:
-              'undo redo | formatselect | bold italic | \
-              alignleft aligncenter alignright | \
-              bullist numlist outdent indent | help'
+              'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+              ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
           }}
           onChange={(e)=>articleMarkdownHandler(e)}
         />}
