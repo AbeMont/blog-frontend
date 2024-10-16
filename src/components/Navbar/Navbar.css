@@ -1,0 +1,7 @@
+.nav-link {
+    padding: 8px !important;
+}
+
+ul.navbar-nav li:first-child a.nav-link {
+    padding: 8px 8px 8px 0px !important;
+}

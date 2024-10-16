@@ -1,0 +1,9 @@
+.card {
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.card-action-btns {
+    position: absolute;
+    right: 0;
+}
